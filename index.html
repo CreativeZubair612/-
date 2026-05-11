@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graphic Designer Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    background: #0f172a;
+    color: white;
+}
+
+/* NAVBAR */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: #020617;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 45px;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #22c55e;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* PORTFOLIO */
+.portfolio {
+    text-align: center;
+    padding: 50px;
+}
+
+.grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+    background: #1e293b;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+    padding: 50px;
+}
+
+/* POPUP FORM */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+
+.popup-content {
+    background: #1e293b;
+    width: 320px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.popup-content input,
+.popup-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.popup-content button {
+    width: 100%;
+    padding: 10px;
+    background: #22c55e;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>Muhammad Zubair</h2>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Creative Graphic Designer</h1>
+    <p>------------------------------------------------------------------------------------------------------------</p>
+    <p>--------------------------------------------------------------------------</p>
+    <p>--------------------------------------------------</p>
+    <p>---------------------------------</p> 
+    <p>---------------</p>
+    <p>I am a creative graphic designer specializing in delivering high-quality visual solutions tailored to meet the unique needs of businesses across various industries. With a strong understanding of design principles, branding, and user experience, I create visually compelling content that enhances brand identity and engages target audiences effectively. I design strategic visual identities that help businesses establish a strong and memorable presence in the market. From logo creation to complete brand systems, my work focuses on consistency, clarity, and professionalism, ensuring that each design communicates the company’s values and vision effectively. I design clean and user-friendly interfaces that enhance the overall user experience for websites and applications. By combining aesthetics with functionality, I ensure that every design is intuitive, responsive, and aligned with modern UI/UX standards, using tools like Figma.</p>
+    <p>---------------</p>
+    <p>---------------------------------</p>
+    <p>--------------------------------------------------</p>
+    <p>--------------------------------------------------------------------------</p>
+    <p>------------------------------------------------------------------------------------------------------------</p>
+    <button onclick="openForm()">Hire Me</button>
+</section>
+
+<section id="work" class="portfolio">
+    <h2>My Work</h2>
+    <p>---------------</p>
+    <p>---------------------------------</p>
+    <p>--------------------------------------------------</p>
+    <p>--------------------------------------------------------------------------</p>
+    <p>------------------------------------------------------------------------------------------------------------</p>
+   
+    <div class="grid">
+
+        <div class="card">
+            <img src="images/design1.png" alt="Design 1">
+        </div>
+
+        <div class="card">
+            <img src="images/design2.png" alt="Design 2">
+        </div>
+
+        <div class="card">
+            <img src="images/design3.png" alt="Design 3">
+        </div>
+
+                <div class="card">
+            <img src="images/design4.png" alt="Design 4">
+        </div>
+
+        <div class="card">
+            <img src="images/design5.png" alt="Design 5">
+        </div>
+
+        <div class="card">
+            <img src="images/design6.png" alt="Design 6">
+        </div>
+
+                <div class="card">
+            <img src="images/design7.png" alt="Design 7">
+        </div>
+
+        <div class="card">
+            <img src="images/design8.png" alt="Design 8">
+        </div>
+        <div class="card">
+            <img src="images/design9.png" alt="Design 9">
+        </div>
+
+        <div class="card">
+            <img src="images/design10.png" alt="Design 10">
+        </div>
+
+                <div class="card">
+            <img src="images/design11.png" alt="Design 11">
+        </div>
+
+        <div class="card">
+            <img src="images/design12.png" alt="Design 12">
+        </div>
+    
+    </div>
+</section>
+     
+
+<section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: mzzubair612@gmail.com</p>
+    <p>Phone: +44 7449260500</p>
+</section>
+
+<!-- POPUP FORM -->
+<div id="formPopup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closeForm()">&times;</span>
+        <h2>Hire Me</h2>
+
+        <form id="contactForm" onsubmit="submitForm(event)">
+            <input type="text" name="user_name" placeholder="Your Name" required>
+            <input type="email" name="user_email" placeholder="Your Email" required>
+            <input type="text" name="project_type" placeholder="Project Type" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Request</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>2026 Muhammad Zubair</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+    emailjs.init("_bUE6eZ-KmbXe0xvE"); // 
+})();
+
+function openForm(){
+    document.getElementById("formPopup").style.display = "block";
+}
+
+function closeForm(){
+    document.getElementById("formPopup").style.display = "none";
+}
+
+function submitForm(event){
+    event.preventDefault();
+
+    emailjs.sendForm('service_h3zn5ls', 'template_kc5xbyd', '#contactForm')
+    .then(function() {
+        alert("Message sent successfully!");
+        closeForm();
+    }, function() {
+        alert("Failed to send message.");
+    });
+}
+
+/* Close when clicking outside */
+window.onclick = function(e){
+    let popup = document.getElementById("formPopup");
+    if(e.target === popup){
+        popup.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
+
