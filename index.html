@@ -292,6 +292,7 @@ footer {
             <input type="tel" name="user_phone" placeholder="Your Phone Number" required>
             <input type="text" name="project_type" placeholder="Project Type" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
+            <input type="hidden" name="to_email" value="mzzubair612@gmail.com">
             <button type="submit">Send Request</button>
         </form>
     </div>
@@ -305,7 +306,7 @@ footer {
 
 <script>
 (function(){
-    emailjs.init("_bUE6eZ-KmbXe0xvE"); // 
+    emailjs.init("_bUE6eZ-KmbXe0xvE");
 })();
 
 function openForm(){
@@ -320,11 +321,13 @@ function submitForm(event){
     event.preventDefault();
 
     emailjs.sendForm('service_h3zn5ls', 'template_kc5xbyd', '#contactForm')
-    .then(function() {
+    .then(function(response) {
         alert("Message sent successfully!");
+        document.getElementById("contactForm").reset();
         closeForm();
-    }, function() {
-        alert("Failed to send message.");
+    }, function(error) {
+        alert("Failed to send message. Please try again.");
+        console.log(error);
     });
 }
 
