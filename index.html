@@ -3,14 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Graphic Designer Portfolio</title>
+<meta name="description" content="Muhammad Zubair - Professional Graphic Designer. Custom logos, posters, social media content, and branding designs.">
+<title>Muhammad Zubair - Graphic Designer Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -22,40 +29,84 @@ body {
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 50px;
     background: #020617;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+header h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
 }
 
 nav a {
     color: white;
-    margin-left: 20px;
     text-decoration: none;
+    transition: 0.3s;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background: #22c55e;
+    color: black;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 /* HERO */
 .hero {
     text-align: center;
     padding: 100px 20px;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
 }
 
 .hero h1 {
     font-size: 45px;
+    margin-bottom: 15px;
 }
 
 .hero p {
     margin: 15px 0;
     font-size: 16px;
     line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero button {
     margin-top: 20px;
-    padding: 12px 25px;
+    padding: 12px 30px;
     background: #22c55e;
     border: none;
     color: white;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #16a34a;
+    transform: scale(1.05);
 }
 
 /* SCROLLING TICKER */
@@ -91,45 +142,152 @@ nav a {
     }
 }
 
+/* ABOUT SECTION */
+.about {
+    padding: 60px 20px;
+    background: #1e293b;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #22c55e;
+}
+
+.about p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* SERVICES SECTION */
+.services {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #22c55e;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 10px;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    border-color: #22c55e;
+    transform: translateY(-10px);
+}
+
+.service-card i {
+    font-size: 40px;
+    color: #22c55e;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
 /* PORTFOLIO */
 .portfolio {
     text-align: center;
-    padding: 50px;
+    padding: 60px 20px;
 }
 
 .portfolio h2 {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     font-size: 32px;
+    color: #22c55e;
 }
 
 .grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .card {
-    width: 250px;
     background: #1e293b;
     padding: 10px;
     border-radius: 10px;
+    overflow: hidden;
     transition: 0.3s;
+    position: relative;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+}
+
+.card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
 }
 
 .card img {
     width: 100%;
-    border-radius: 10px;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.1);
 }
 
 /* CONTACT */
 .contact {
     text-align: center;
-    padding: 50px;
+    padding: 60px 20px;
+    background: #1e293b;
+}
+
+.contact h2 {
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #22c55e;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #22c55e;
 }
 
 /* POPUP FORM */
@@ -140,54 +298,231 @@ nav a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.8);
     z-index: 1000;
     overflow-y: auto;
 }
 
 .popup-content {
     background: #1e293b;
-    width: 320px;
+    width: 100%;
+    max-width: 400px;
     margin: 50px auto;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    max-height: 90vh;
-    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
 .popup-content input,
 .popup-content textarea {
     width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: none;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #374151;
     border-radius: 5px;
     box-sizing: border-box;
+    background: #0f172a;
+    color: white;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.popup-content input:focus,
+.popup-content textarea:focus {
+    outline: none;
+    border-color: #22c55e;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
 }
 
 .popup-content button {
     width: 100%;
-    padding: 10px;
-    margin-top: 10px;
+    padding: 12px;
+    margin-top: 15px;
     background: #22c55e;
     border: none;
     color: white;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.popup-content button:hover {
+    background: #16a34a;
+}
+
+.popup-content button:disabled {
+    background: #6b7280;
+    cursor: not-allowed;
 }
 
 .close {
     float: right;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 28px;
     color: #ef4444;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #dc2626;
+}
+
+.popup h2 {
+    margin-bottom: 20px;
+    color: #22c55e;
+}
+
+/* LOADER */
+.loader {
+    display: none;
+    border: 4px solid #374151;
+    border-top: 4px solid #22c55e;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
     background: #020617;
+    border-top: 2px solid #374151;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: #22c55e;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: white;
+    transform: scale(1.2);
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        justify-content: space-between;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #020617;
+        flex-direction: column;
+        gap: 0;
+        padding: 20px;
+        z-index: 99;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 12px;
+        border-bottom: 1px solid #374151;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    header {
+        padding: 15px 20px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .ticker-text {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .popup-content {
+        width: 90%;
+        margin: 100px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    header h2 {
+        font-size: 18px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .portfolio h2,
+    .about h2,
+    .services h2,
+    .contact h2 {
+        font-size: 24px;
+    }
+
+    .service-card i {
+        font-size: 30px;
+    }
+
+    .service-card h3 {
+        font-size: 16px;
+    }
 }
 </style>
 </head>
@@ -195,15 +530,20 @@ footer {
 <body>
 
 <header>
-    <h2>Muhammad Zubair</h2>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#work">Work</a>
+    <h2>🎨 Muhammad Zubair</h2>
+    <nav id="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Portfolio</a>
         <a href="#contact">Contact</a>
     </nav>
+    <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
 </header>
 
-<section class="hero">
+<section id="home" class="hero">
     <h1>Creative Graphic Designer</h1>
     <p>Hi, I'm a graphic designer passionate about creating clean and eye-catching designs. I work on logos, posters, social media content, banners, and branding projects. I enjoy helping people bring their ideas to life through creative design. I create modern, creative, and professional graphic designs for brands, businesses, and social media. My goal is to turn ideas into powerful visuals that stand out.</p>
     <button onclick="openForm()">Hire Me</button>
@@ -218,67 +558,145 @@ footer {
     </div>
 </div>
 
+<!-- ABOUT SECTION -->
+<section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I'm a passionate graphic designer with expertise in creating stunning visual content. With years of experience in the design industry, I've helped numerous businesses and individuals bring their creative visions to life. My design philosophy is simple: <strong>create work that not only looks great but also achieves your business goals.</strong></p>
+    <p>Whether you need a logo, social media content, or complete branding solutions, I'm here to deliver professional, creative, and timely results that exceed your expectations.</p>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="services">
+    <h2>My Services</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <i class="fas fa-pen-fancy"></i>
+            <h3>Logo Design</h3>
+            <p>Custom logos that represent your brand identity</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-images"></i>
+            <h3>Social Media Content</h3>
+            <p>Eye-catching posts and stories for all platforms</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-palette"></i>
+            <h3>Branding</h3>
+            <p>Complete brand identity and guidelines</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-file-pdf"></i>
+            <h3>Posters & Flyers</h3>
+            <p>Professional promotional materials</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-flag"></i>
+            <h3>Banners & Headers</h3>
+            <p>Custom banners for web and print</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-star"></i>
+            <h3>Custom Design</h3>
+            <p>Any design project you have in mind</p>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
 <section id="work" class="portfolio">
-    <h2>My Work</h2>
+    <h2>My Portfolio</h2>
    
     <div class="grid">
 
         <div class="card">
-            <img src="images/Design1.png" alt="Design 1">
+            <div class="card-img-wrapper">
+                <img src="images/Design1.png" alt="Logo Design">
+            </div>
         </div>
 
         <div class="card">
-            <img src="images/Design2.png" alt="Design 2">
+            <div class="card-img-wrapper">
+                <img src="images/Design2.png" alt="Social Media Design">
+            </div>
         </div>
 
         <div class="card">
-            <img src="images/Design3.png" alt="Design 3">
+            <div class="card-img-wrapper">
+                <img src="images/Design3.png" alt="Branding Design">
+            </div>
         </div>
 
         <div class="card">
-            <img src="images/Design4.PNG" alt="Design 4">
+            <div class="card-img-wrapper">
+                <img src="images/Design4.PNG" alt="Poster Design">
+            </div>
         </div>
 
         <div class="card">
-            <img src="images/Design5.PNG" alt="Design 5">
+            <div class="card-img-wrapper">
+                <img src="images/Design5.PNG" alt="Banner Design">
+            </div>
         </div>
 
         <div class="card">
-            <img src="images/Design6.png" alt="Design 6">
+            <div class="card-img-wrapper">
+                <img src="images/Design6.png" alt="Design Work">
+            </div>
         </div>
 
         <div class="card">
-            <img src="images/Design7.png" alt="Design 7">
+            <div class="card-img-wrapper">
+                <img src="images/Design7.png" alt="Design Work">
+            </div>
         </div>
 
         <div class="card">
-            <img src="images/Design8.png" alt="Design 8">
+            <div class="card-img-wrapper">
+                <img src="images/Design8.png" alt="Design Work">
+            </div>
         </div>
 
         <div class="card">
-            <img src="images/Design9.png" alt="Design 9">
+            <div class="card-img-wrapper">
+                <img src="images/Design9.png" alt="Design Work">
+            </div>
         </div>
 
         <div class="card">
-            <img src="images/Design10.png" alt="Design 10">
+            <div class="card-img-wrapper">
+                <img src="images/Design10.png" alt="Design Work">
+            </div>
         </div>
 
         <div class="card">
-            <img src="images/design11.PNG" alt="Design 11">
+            <div class="card-img-wrapper">
+                <img src="images/design11.PNG" alt="Design Work">
+            </div>
         </div>
 
         <div class="card">
-            <img src="images/Design12.png" alt="Design 12">
+            <div class="card-img-wrapper">
+                <img src="images/Design12.png" alt="Design Work">
+            </div>
         </div>
     
     </div>
 </section>
-     
 
+<!-- CONTACT SECTION -->
 <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Email: mzzubair612@gmail.com</p>
-    <p>Phone: +44 7449260500</p>
+    <h2>Get In Touch</h2>
+    <div class="contact-info">
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>mzzubair612@gmail.com</span>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+44 7449260500</span>
+        </div>
+    </div>
+    <button onclick="openForm()" style="padding: 12px 30px; background: #22c55e; border: none; color: white; cursor: pointer; border-radius: 5px; font-size: 16px;">Hire Me Now</button>
 </section>
 
 <!-- POPUP FORM -->
@@ -291,20 +709,48 @@ footer {
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <input type="text" name="title" placeholder="Project Type" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Request</button>
+            <textarea name="message" placeholder="Your Message" required style="resize: vertical; min-height: 100px;"></textarea>
+            <div class="loader" id="loader"></div>
+            <button type="submit" id="submit-btn">Send Request</button>
         </form>
     </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
-    <p>2026 Muhammad Zubair</p>
+    <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:mzzubair612@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>&copy; <span id="year"></span> Muhammad Zubair. All rights reserved.</p>
+    <p>Graphic Design Portfolio | Creative Solutions for Your Brand</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivjs.com/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
 
+// Set current year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// Close menu when link is clicked
+navMenu.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+        navMenu.classList.remove('active');
+    }
+});
+
+// EmailJS initialization
 emailjs.init("_bUE6eZ-KmbXe0xvE");
 
 function openForm(){
@@ -315,10 +761,14 @@ function closeForm(){
     document.getElementById("formPopup").style.display = "none";
 }
 
-document.getElementById("contact-form")
-.addEventListener("submit", function(event) {
-
+document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
+
+    const loader = document.getElementById('loader');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    loader.style.display = 'block';
+    submitBtn.disabled = true;
 
     emailjs.sendForm(
         "service_h3zn5ls",
@@ -326,19 +776,21 @@ document.getElementById("contact-form")
         this
     )
     .then(function() {
-
-        alert("Message sent successfully!");
+        loader.style.display = 'none';
+        submitBtn.disabled = false;
+        
+        alert("✅ Message sent successfully! I'll get back to you soon.");
         document.getElementById("contact-form").reset();
         closeForm();
 
     })
     .catch(function(error) {
-
+        loader.style.display = 'none';
+        submitBtn.disabled = false;
+        
         console.log(error);
-
-        alert("FAILED - Please try again");
+        alert("❌ Failed to send message. Please try again or email me directly.");
     });
-
 });
 
 /* Close when clicking outside */
