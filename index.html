@@ -286,13 +286,12 @@ footer {
         <span class="close" onclick="closeForm()">&times;</span>
         <h2>Hire Me</h2>
 
-        <form id="contactForm" onsubmit="submitForm(event)">
+        <form id="contact-form">
             <input type="text" name="user_name" placeholder="Your Name" required>
             <input type="email" name="user_email" placeholder="Your Email" required>
             <input type="tel" name="user_phone" placeholder="Your Phone Number" required>
             <input type="text" name="project_type" placeholder="Project Type" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
-            <input type="hidden" name="to_email" value="mzzubair612@gmail.com">
             <button type="submit">Send Request</button>
         </form>
     </div>
@@ -302,12 +301,11 @@ footer {
     <p>2026 Muhammad Zubair</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
-(function(){
-    emailjs.init("_bUE6eZ-KmbXe0xvE");
-})();
+
+emailjs.init("_bUE6eZ-KmbXe0xvE");
 
 function openForm(){
     document.getElementById("formPopup").style.display = "block";
@@ -317,19 +315,31 @@ function closeForm(){
     document.getElementById("formPopup").style.display = "none";
 }
 
-function submitForm(event){
+document.getElementById("contact-form")
+.addEventListener("submit", function(event) {
+
     event.preventDefault();
 
-    emailjs.sendForm('service_h3zn5ls', 'template_kc5xbyd', '#contactForm')
-    .then(function(response) {
+    emailjs.sendForm(
+        "service_h3zn5ls",
+        "template_kc5xbyd",
+        this
+    )
+    .then(function() {
+
         alert("Message sent successfully!");
-        document.getElementById("contactForm").reset();
+        document.getElementById("contact-form").reset();
         closeForm();
-    }, function(error) {
-        alert("Failed to send message. Please try again.");
+
+    })
+    .catch(function(error) {
+
         console.log(error);
+
+        alert("FAILED - Please try again");
     });
-}
+
+});
 
 /* Close when clicking outside */
 window.onclick = function(e){
@@ -338,6 +348,7 @@ window.onclick = function(e){
         popup.style.display = "none";
     }
 }
+
 </script>
 
 </body>
