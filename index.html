@@ -7,6 +7,7 @@
 <title>Muhammad Zubair - Graphic Designer Portfolio</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
 * {
     margin: 0;
@@ -673,24 +674,6 @@ footer {
     border-top: 2px solid #374151;
 }
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 15px;
-}
-
-.social-links a {
-    color: #22c55e;
-    font-size: 20px;
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    color: white;
-    transform: scale(1.2);
-}
-
 footer p {
     margin: 5px 0;
     font-size: 14px;
@@ -843,12 +826,18 @@ footer p {
     </button>
 </header>
 
+<section id="home" class="hero fade-in">
+    <h1>Creative Graphic Designer</h1>
+    <p>Hi, I'm a graphic designer passionate about creating clean and eye-catching designs. I work on logos, posters, social media content, banners, and branding projects. I enjoy helping people bring their ideas to life through creative design.</p>
+    <button onclick="openForm()">Hire Me</button>
+</section>
+
 <!-- SCROLLING TICKER IN RED -->
 <div class="ticker-container">
     <div class="ticker">
-        <span class="ticker-text">⚠️ Important Note: Work begins after confirmation. Revisions and final pricing depends on project scope.</span>
-        <span class="ticker-text">⚠️ Important Note: Work begins after confirmation. Revisions and final pricing depends on project scope.</span>
-        <span class="ticker-text">⚠️ Important Note: Work begins after confirmation. Revisions and final pricing depends on project scope.</span>
+        <span class="ticker-text">Important Note: Work begins after confirmation. Revisions and final pricing depends on project scope.</span>
+        <span class="ticker-text">Important Note: Work begins after confirmation. Revisions and final pricing depends on project scope.</span>
+        <span class="ticker-text">Important Note: Work begins after confirmation. Revisions and final pricing depends on project scope.</span>
     </div>
 </div>
 
@@ -982,37 +971,37 @@ footer p {
     <h2>Client Testimonials</h2>
     <div class="testimonials-grid">
         <div class="testimonial-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <div class="stars">★★★★★</div>
             <p class="testimonial-text">"Muhammad created an amazing logo for my business. His attention to detail and quick turnaround time were impressive. Highly recommended!"</p>
             <p class="testimonial-author">- Sarah Johnson</p>
         </div>
 
         <div class="testimonial-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <div class="stars">★★★★★</div>
             <p class="testimonial-text">"Excellent social media designs! The content really stands out and helped us increase engagement. Great communication throughout the project."</p>
             <p class="testimonial-author">- Mike Chen</p>
         </div>
 
         <div class="testimonial-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <div class="stars">★★★★★</div>
             <p class="testimonial-text">"Best branding designer I've worked with. He understood my vision perfectly and delivered designs that exceeded my expectations!"</p>
             <p class="testimonial-author">- Emma Wilson</p>
         </div>
 
         <div class="testimonial-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <div class="stars">★★★★★</div>
             <p class="testimonial-text">"Professional, creative, and reliable. Muhammad delivered high-quality poster designs within the deadline. Will definitely work together again!"</p>
             <p class="testimonial-author">- David Martinez</p>
         </div>
 
         <div class="testimonial-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <div class="stars">★★★★★</div>
             <p class="testimonial-text">"The custom banner designs were perfect for our event. Muhammad was responsive and made revisions quickly. Fantastic work!"</p>
             <p class="testimonial-author">- Lisa Anderson</p>
         </div>
 
         <div class="testimonial-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <div class="stars">★★★★★</div>
             <p class="testimonial-text">"Top-notch designer! Creative, professional, and easy to work with. He helped us establish a strong visual brand. Highly satisfied!"</p>
             <p class="testimonial-author">- Robert Taylor</p>
         </div>
@@ -1030,7 +1019,7 @@ footer p {
                 <i class="fas fa-chevron-down faq-icon"></i>
             </div>
             <div class="faq-answer">
-                <p>Most projects take 3-4 business hours depending on complexity. Simple logo designs might take 10 hours, while complete branding packages can take 1-2 days. I'll provide a specific timeline when you submit your project brief.</p>
+                <p>Most projects take 3-7 business days depending on complexity. Simple logo designs might take 2-3 days, while complete branding packages can take 2-3 weeks. I'll provide a specific timeline when you submit your project brief.</p>
             </div>
         </div>
 
@@ -1060,7 +1049,7 @@ footer p {
                 <i class="fas fa-chevron-down faq-icon"></i>
             </div>
             <div class="faq-answer">
-                <p>I currently accept payments through bank transfer only. Bank account details will be provided when the project is confirmed.</p>
+                <p>I accept bank transfers, PayPal, and credit cards. A 50% deposit is required to start the project, with the remaining balance due upon completion.</p>
             </div>
         </div>
 
@@ -1127,12 +1116,12 @@ footer p {
     </button>
     <div class="chat-box" id="chat-box">
         <div class="chat-header">
-            💬 Chat with Me
-            <button class="chat-close" id="chat-close">✕</button>
+            Chat with Me
+            <button class="chat-close" id="chat-close">X</button>
         </div>
         <div class="chat-messages" id="chat-messages">
             <div class="chat-message bot">
-                Hi! 👋 How can I help you today?
+                Hi! How can I help you today?
             </div>
         </div>
         <div class="chat-input-area">
@@ -1144,19 +1133,13 @@ footer p {
 
 <!-- FOOTER -->
 <footer>
-    <div class="social-links">
-        <a href="mailto:mzzubair612@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-    </div>
-    <p>&copy; <span id="year"></span> Muhammad Zubair. All rights reserved.</p>
+    <p>Copyright 2026 Muhammad Zubair. All rights reserved.</p>
     <p>Graphic Design Portfolio | Creative Solutions for Your Brand</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
-
-// Set current year
-document.getElementById('year').textContent = new Date().getFullYear();
 
 // SCROLL ANIMATION
 const observerOptions = {
@@ -1228,16 +1211,16 @@ chatClose.addEventListener('click', () => {
 
 // Chat responses
 const chatResponses = {
-    'hello': 'Hello! How can I assist you today? 😊',
-    'hi': 'Hey there! What can I do for you? 👋',
+    'hello': 'Hello! How can I assist you today?',
+    'hi': 'Hey there! What can I do for you?',
     'price': 'I offer custom packages for different design needs. Contact me to discuss your project requirements!',
     'pricing': 'I offer custom packages for different design needs. Contact me to discuss your project requirements!',
     'logo': 'I create amazing custom logos! Would you like to discuss your logo design project?',
     'social': 'I can create eye-catching social media content for all platforms. Tell me more about your needs!',
-    'thanks': 'You\'re welcome! Happy to help! 😊',
-    'thank you': 'You\'re welcome! Happy to help! 😊',
-    'bye': 'Goodbye! Feel free to reach out anytime! 👋',
-    'default': 'That\'s great! Would you like to discuss your project? Feel free to send me an inquiry! 📧'
+    'thanks': 'You are welcome! Happy to help!',
+    'thank you': 'You are welcome! Happy to help!',
+    'bye': 'Goodbye! Feel free to reach out anytime!',
+    'default': 'That is great! Would you like to discuss your project? Feel free to send me an inquiry!'
 };
 
 function getBotResponse(message) {
@@ -1309,7 +1292,7 @@ document.getElementById("contact-form").addEventListener("submit", function(even
         loader.style.display = 'none';
         submitBtn.disabled = false;
         
-        alert("✅ Message sent successfully! I'll get back to you soon.");
+        alert("Message sent successfully! I'll get back to you soon.");
         document.getElementById("contact-form").reset();
         closeForm();
 
@@ -1319,7 +1302,7 @@ document.getElementById("contact-form").addEventListener("submit", function(even
         submitBtn.disabled = false;
         
         console.log(error);
-        alert("❌ Failed to send message. Please try again or email me directly.");
+        alert("Failed to send message. Please try again or email me directly.");
     });
 });
 
