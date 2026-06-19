@@ -25,6 +25,18 @@ body {
     color: white;
 }
 
+/* SCROLL ANIMATION */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* NAVBAR */
 header {
     display: flex;
@@ -258,6 +270,132 @@ nav a:hover {
     transform: scale(1.1);
 }
 
+/* TESTIMONIALS SECTION */
+.testimonials {
+    padding: 60px 20px;
+    background: #1e293b;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #22c55e;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: #0f172a;
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 4px solid #22c55e;
+    transition: 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2);
+}
+
+.stars {
+    color: #fbbf24;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: #22c55e;
+    font-size: 16px;
+}
+
+/* FAQ SECTION */
+.faq {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #22c55e;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: #1e293b;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.faq-question:hover {
+    background: #374151;
+}
+
+.faq-question h3 {
+    font-size: 16px;
+    text-align: left;
+    color: #22c55e;
+}
+
+.faq-icon {
+    font-size: 20px;
+    color: #22c55e;
+    transition: 0.3s;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #0f172a;
+}
+
+.faq-answer p {
+    padding: 20px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+}
+
 /* CONTACT */
 .contact {
     text-align: center;
@@ -391,6 +529,143 @@ nav a:hover {
     100% { transform: rotate(360deg); }
 }
 
+/* LIVE CHAT WIDGET */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.chat-button {
+    width: 60px;
+    height: 60px;
+    background: #22c55e;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-button:hover {
+    background: #16a34a;
+    transform: scale(1.1);
+}
+
+.chat-box {
+    display: none;
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    background: #1e293b;
+    border-radius: 10px;
+    box-shadow: 0 5px 40px rgba(0,0,0,0.5);
+    overflow: hidden;
+    animation: slideUp 0.3s ease-out;
+    flex-direction: column;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.chat-header {
+    background: #22c55e;
+    color: black;
+    padding: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-close {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-message {
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.chat-message.bot {
+    background: #0f172a;
+    color: #22c55e;
+    align-self: flex-start;
+}
+
+.chat-message.user {
+    background: #22c55e;
+    color: black;
+    align-self: flex-end;
+}
+
+.chat-input-area {
+    padding: 15px;
+    border-top: 1px solid #374151;
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 10px;
+    background: #0f172a;
+    border: 1px solid #374151;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.chat-input-area input:focus {
+    outline: none;
+    border-color: #22c55e;
+}
+
+.chat-input-area button {
+    background: #22c55e;
+    border: none;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.chat-input-area button:hover {
+    background: #16a34a;
+}
+
 /* FOOTER */
 footer {
     text-align: center;
@@ -480,6 +755,10 @@ footer p {
         grid-template-columns: 1fr;
     }
 
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
     .contact-info {
         flex-direction: column;
         gap: 20px;
@@ -493,6 +772,14 @@ footer p {
     .popup-content {
         width: 90%;
         margin: 100px auto;
+    }
+
+    .chat-box {
+        width: 300px;
+    }
+
+    .chat-messages {
+        height: 250px;
     }
 }
 
@@ -512,7 +799,9 @@ footer p {
     .portfolio h2,
     .about h2,
     .services h2,
-    .contact h2 {
+    .contact h2,
+    .testimonials h2,
+    .faq h2 {
         font-size: 24px;
     }
 
@@ -523,6 +812,16 @@ footer p {
     .service-card h3 {
         font-size: 16px;
     }
+
+    .chat-box {
+        width: 280px;
+    }
+
+    .chat-button {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
 }
 </style>
 </head>
@@ -530,18 +829,26 @@ footer p {
 <body>
 
 <header>
-    <h2> Muhammad Zubair</h2>
+    <h2>🎨 Muhammad Zubair</h2>
     <nav id="nav-menu">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#work">Portfolio</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
     </nav>
     <button class="menu-toggle" id="menu-toggle">
         <i class="fas fa-bars"></i>
     </button>
 </header>
+
+<section id="home" class="hero fade-in">
+    <h1>Creative Graphic Designer</h1>
+    <p>Hi, I'm a graphic designer passionate about creating clean and eye-catching designs. I work on logos, posters, social media content, banners, and branding projects. I enjoy helping people bring their ideas to life through creative design.</p>
+    <button onclick="openForm()">Hire Me</button>
+</section>
 
 <!-- SCROLLING TICKER IN RED -->
 <div class="ticker-container">
@@ -553,14 +860,14 @@ footer p {
 </div>
 
 <!-- ABOUT SECTION -->
-<section id="about" class="about">
+<section id="about" class="about fade-in">
     <h2>About Me</h2>
     <p>I'm a passionate graphic designer with expertise in creating stunning visual content. With years of experience in the design industry, I've helped numerous businesses and individuals bring their creative visions to life. My design philosophy is simple: <strong>create work that not only looks great but also achieves your business goals.</strong></p>
     <p>Whether you need a logo, social media content, or complete branding solutions, I'm here to deliver professional, creative, and timely results that exceed your expectations.</p>
 </section>
 
 <!-- SERVICES SECTION -->
-<section id="services" class="services">
+<section id="services" class="services fade-in">
     <h2>My Services</h2>
     <div class="services-grid">
         <div class="service-card">
@@ -592,21 +899,12 @@ footer p {
             <i class="fas fa-star"></i>
             <h3>Custom Design</h3>
             <p>Any design project you have in mind</p>
-    </div> 
-    <div class="service-card">
-        <i class="fas fa-bezier-curve"></i>
-        <h3>Graphic Illustration</h3>
-        <p>Creative illustrations and digital artwork for your brand</p>
-    </div>
-    <div class="service-card">
-         <i class="fas fa-layer-group"></i>
-         <h3>Visual Identity</h3>
-         <p>Unique graphic elements and cohesive brand visuals</p>
+        </div>
     </div>
 </section>
 
 <!-- PORTFOLIO -->
-<section id="work" class="portfolio">
+<section id="work" class="portfolio fade-in">
     <h2>My Portfolio</h2>
    
     <div class="grid">
@@ -686,8 +984,118 @@ footer p {
     </div>
 </section>
 
+<!-- TESTIMONIALS SECTION -->
+<section id="testimonials" class="testimonials fade-in">
+    <h2>Client Testimonials</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Muhammad created an amazing logo for my business. His attention to detail and quick turnaround time were impressive. Highly recommended!"</p>
+            <p class="testimonial-author">- Sarah Johnson</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Excellent social media designs! The content really stands out and helped us increase engagement. Great communication throughout the project."</p>
+            <p class="testimonial-author">- Mike Chen</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Best branding designer I've worked with. He understood my vision perfectly and delivered designs that exceeded my expectations!"</p>
+            <p class="testimonial-author">- Emma Wilson</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Professional, creative, and reliable. Muhammad delivered high-quality poster designs within the deadline. Will definitely work together again!"</p>
+            <p class="testimonial-author">- David Martinez</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"The custom banner designs were perfect for our event. Muhammad was responsive and made revisions quickly. Fantastic work!"</p>
+            <p class="testimonial-author">- Lisa Anderson</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Top-notch designer! Creative, professional, and easy to work with. He helped us establish a strong visual brand. Highly satisfied!"</p>
+            <p class="testimonial-author">- Robert Taylor</p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section id="faq" class="faq fade-in">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>How long does a typical project take?</h3>
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Most projects take 3-7 business days depending on complexity. Simple logo designs might take 2-3 days, while complete branding packages can take 2-3 weeks. I'll provide a specific timeline when you submit your project brief.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>How many revisions are included?</h3>
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Each package includes 2-3 rounds of revisions. If you need more revisions, we can discuss additional charges. I always ensure you're happy with the final design!</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>What file formats will I receive?</h3>
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>You'll receive designs in multiple formats including PNG, JPG, PDF, and editable source files (PSD/AI). This ensures you can use your designs for any purpose.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>What payment methods do you accept?</h3>
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>I accept bank transfers, PayPal, and credit cards. A 50% deposit is required to start the project, with the remaining balance due upon completion.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Can you work with my brand guidelines?</h3>
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Absolutely! If you have existing brand guidelines, color schemes, or style preferences, please share them with me. I'll ensure all designs align perfectly with your brand identity.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Do you offer rush delivery?</h3>
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes! I can prioritize rush projects for an additional fee. Contact me to discuss your timeline and I'll let you know if I can accommodate your needs.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 <!-- CONTACT SECTION -->
-<section id="contact" class="contact">
+<section id="contact" class="contact fade-in">
     <h2>Get In Touch</h2>
     <div class="contact-info">
         <div class="contact-item">
@@ -719,18 +1127,36 @@ footer p {
     </div>
 </div>
 
-<!-- SCROLLING TICKER IN RED -->
-<div class="ticker-container">
-    <div class="ticker">
-        <span class="ticker-text">⚠️ Important Note: Work begins after confirmation. Revisions and final pricing depends on project scope.</span>
-        <span class="ticker-text">⚠️ Important Note: Work begins after confirmation. Revisions and final pricing depends on project scope.</span>
-        <span class="ticker-text">⚠️ Important Note: Work begins after confirmation. Revisions and final pricing depends on project scope.</span>
+<!-- LIVE CHAT WIDGET -->
+<div class="chat-widget">
+    <button class="chat-button" id="chat-toggle">
+        <i class="fas fa-comments"></i>
+    </button>
+    <div class="chat-box" id="chat-box">
+        <div class="chat-header">
+            💬 Chat with Me
+            <button class="chat-close" id="chat-close">✕</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="chat-message bot">
+                Hi! 👋 How can I help you today?
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type your message...">
+            <button id="chat-send">Send</button>
+        </div>
     </div>
 </div>
-    
+
 <!-- FOOTER -->
 <footer>
-
+    <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:mzzubair612@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
     <p>&copy; <span id="year"></span> Muhammad Zubair. All rights reserved.</p>
     <p>Graphic Design Portfolio | Creative Solutions for Your Brand</p>
 </footer>
@@ -741,6 +1167,24 @@ footer p {
 
 // Set current year
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// SCROLL ANIMATION
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+});
 
 // Mobile menu toggle
 const menuToggle = document.getElementById('menu-toggle');
@@ -754,6 +1198,95 @@ menuToggle.addEventListener('click', () => {
 navMenu.addEventListener('click', (e) => {
     if (e.target.tagName === 'A') {
         navMenu.classList.remove('active');
+    }
+});
+
+// FAQ ACCORDION
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        const allItems = document.querySelectorAll('.faq-item');
+        
+        allItems.forEach(item => {
+            if (item !== faqItem) {
+                item.classList.remove('active');
+            }
+        });
+        
+        faqItem.classList.toggle('active');
+    });
+});
+
+// LIVE CHAT
+const chatToggle = document.getElementById('chat-toggle');
+const chatClose = document.getElementById('chat-close');
+const chatBox = document.getElementById('chat-box');
+const chatInput = document.getElementById('chat-input');
+const chatSend = document.getElementById('chat-send');
+const chatMessages = document.getElementById('chat-messages');
+
+chatToggle.addEventListener('click', () => {
+    chatBox.style.display = chatBox.style.display === 'none' ? 'flex' : 'none';
+    chatBox.style.flexDirection = 'column';
+});
+
+chatClose.addEventListener('click', () => {
+    chatBox.style.display = 'none';
+});
+
+// Chat responses
+const chatResponses = {
+    'hello': 'Hello! How can I assist you today? 😊',
+    'hi': 'Hey there! What can I do for you? 👋',
+    'price': 'I offer custom packages for different design needs. Contact me to discuss your project requirements!',
+    'pricing': 'I offer custom packages for different design needs. Contact me to discuss your project requirements!',
+    'logo': 'I create amazing custom logos! Would you like to discuss your logo design project?',
+    'social': 'I can create eye-catching social media content for all platforms. Tell me more about your needs!',
+    'thanks': 'You\'re welcome! Happy to help! 😊',
+    'thank you': 'You\'re welcome! Happy to help! 😊',
+    'bye': 'Goodbye! Feel free to reach out anytime! 👋',
+    'default': 'That\'s great! Would you like to discuss your project? Feel free to send me an inquiry! 📧'
+};
+
+function getBotResponse(message) {
+    const lowerMessage = message.toLowerCase();
+    
+    for (let keyword in chatResponses) {
+        if (lowerMessage.includes(keyword)) {
+            return chatResponses[keyword];
+        }
+    }
+    
+    return chatResponses['default'];
+}
+
+function addMessage(text, sender) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chat-message ${sender}`;
+    messageDiv.textContent = text;
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+chatSend.addEventListener('click', () => {
+    const message = chatInput.value.trim();
+    
+    if (message) {
+        addMessage(message, 'user');
+        chatInput.value = '';
+        
+        setTimeout(() => {
+            const response = getBotResponse(message);
+            addMessage(response, 'bot');
+        }, 500);
+    }
+});
+
+chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        chatSend.click();
     }
 });
 
