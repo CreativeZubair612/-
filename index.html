@@ -529,143 +529,6 @@ nav a:hover {
     100% { transform: rotate(360deg); }
 }
 
-/* LIVE CHAT WIDGET */
-.chat-widget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
-}
-
-.chat-button {
-    width: 60px;
-    height: 60px;
-    background: #22c55e;
-    border: none;
-    border-radius: 50%;
-    color: white;
-    font-size: 28px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.chat-button:hover {
-    background: #16a34a;
-    transform: scale(1.1);
-}
-
-.chat-box {
-    display: none;
-    position: absolute;
-    bottom: 80px;
-    right: 0;
-    width: 350px;
-    background: #1e293b;
-    border-radius: 10px;
-    box-shadow: 0 5px 40px rgba(0,0,0,0.5);
-    overflow: hidden;
-    animation: slideUp 0.3s ease-out;
-    flex-direction: column;
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.chat-header {
-    background: #22c55e;
-    color: black;
-    padding: 15px;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.chat-close {
-    background: none;
-    border: none;
-    color: black;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.chat-messages {
-    height: 300px;
-    overflow-y: auto;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.chat-message {
-    padding: 10px 15px;
-    border-radius: 8px;
-    max-width: 80%;
-    word-wrap: break-word;
-}
-
-.chat-message.bot {
-    background: #0f172a;
-    color: #22c55e;
-    align-self: flex-start;
-}
-
-.chat-message.user {
-    background: #22c55e;
-    color: black;
-    align-self: flex-end;
-}
-
-.chat-input-area {
-    padding: 15px;
-    border-top: 1px solid #374151;
-    display: flex;
-    gap: 10px;
-}
-
-.chat-input-area input {
-    flex: 1;
-    padding: 10px;
-    background: #0f172a;
-    border: 1px solid #374151;
-    border-radius: 5px;
-    color: white;
-    font-size: 14px;
-}
-
-.chat-input-area input:focus {
-    outline: none;
-    border-color: #22c55e;
-}
-
-.chat-input-area button {
-    background: #22c55e;
-    border: none;
-    color: black;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.chat-input-area button:hover {
-    background: #16a34a;
-}
-
 /* FOOTER */
 footer {
     text-align: center;
@@ -755,14 +618,6 @@ footer p {
         width: 90%;
         margin: 100px auto;
     }
-
-    .chat-box {
-        width: 300px;
-    }
-
-    .chat-messages {
-        height: 250px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -793,16 +648,6 @@ footer p {
 
     .service-card h3 {
         font-size: 16px;
-    }
-
-    .chat-box {
-        width: 280px;
-    }
-
-    .chat-button {
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
     }
 }
 </style>
@@ -838,7 +683,7 @@ footer p {
 <!-- ABOUT SECTION -->
 <section id="about" class="about fade-in">
     <h2>About Me</h2>
-    <p>I'm a passionate graphic designer with expertise in creating stunning visual content. With years of experience in the design industry, I've helped numerous businesses and individuals bring their creative visions to life. My design philosophy is simple: <strong>create work that not only looks great but also achieves your business goals.</strong></p>
+    <p>I'm a passionate graphic designer with expertise in creating stunning visual content. With years of experience in the design industry, I've helped numerous businesses and individuals bring their creative visions to life.</p>
     <p>Whether you need a logo, social media content, or complete branding solutions, I'm here to deliver professional, creative, and timely results that exceed your expectations.</p>
 </section>
 
@@ -960,7 +805,29 @@ footer p {
     </div>
 </section>
 
-    <!-- FAQ SECTION -->
+<!-- TESTIMONIALS SECTION -->
+<section id="testimonials" class="testimonials fade-in">
+    <h2>Client Testimonials</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">Muhammad is an incredibly talented designer! He understood my vision perfectly and delivered exactly what I needed.</p>
+            <p class="testimonial-author">- Sarah Johnson</p>
+        </div>
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">Professional, creative, and responsive. My brand identity came to life beautifully. Highly recommended!</p>
+            <p class="testimonial-author">- Ahmed Hassan</p>
+        </div>
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">Best graphic designer I've worked with. Fast turnaround and exceptional quality. Will definitely work with him again!</p>
+            <p class="testimonial-author">- Emma Wilson</p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ SECTION -->
 <section id="faq" class="faq fade-in">
     <h2>Frequently Asked Questions</h2>
     <div class="faq-container">
@@ -971,7 +838,7 @@ footer p {
                 <i class="fas fa-chevron-down faq-icon"></i>
             </div>
             <div class="faq-answer">
-                <p>Most projects take 3-7 business days depending on complexity. Simple logo designs might take 1-2 days, while complete branding packages can take 1-2 weeks. I'll provide a specific timeline when you submit your project brief.</p>
+                <p>Most projects take 3-7 business days depending on complexity. Simple logo designs might take 1-2 days, while complete branding packages can take 1-2 weeks. I'll provide a specific timeline once I understand your project scope.</p>
             </div>
         </div>
 
@@ -1061,212 +928,13 @@ footer p {
     </div>
 </div>
 
-<!-- LIVE CHAT WIDGET -->
-<div class="chat-widget">
-    <button class="chat-button" id="chat-toggle">
-        <i class="fas fa-comments"></i>
-    </button>
-    <div class="chat-box" id="chat-box">
-        <div class="chat-header">
-            Chat with Me
-            <button class="chat-close" id="chat-close">X</button>
-        </div>
-        <div class="chat-messages" id="chat-messages">
-            <div class="chat-message bot">
-                Hi! How can I help you today?
-            </div>
-        </div>
-        <div class="chat-input-area">
-            <input type="text" id="chat-input" placeholder="Type your message...">
-            <button id="chat-send">Send</button>
-        </div>
-    </div>
-</div>
-
 <!-- FOOTER -->
 <footer>
     <p>Copyright 2026 Muhammad Zubair. All rights reserved.</p>
     <p>Graphic Design Portfolio | Creative Solutions for Your Brand</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-
-// SCROLL ANIMATION
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
-});
-
-// Mobile menu toggle
-const menuToggle = document.getElementById('menu-toggle');
-const navMenu = document.getElementById('nav-menu');
-
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-// Close menu when link is clicked
-navMenu.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A') {
-        navMenu.classList.remove('active');
-    }
-});
-
-// FAQ ACCORDION
-const faqQuestions = document.querySelectorAll('.faq-question');
-
-faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-        const faqItem = question.parentElement;
-        const allItems = document.querySelectorAll('.faq-item');
-        
-        allItems.forEach(item => {
-            if (item !== faqItem) {
-                item.classList.remove('active');
-            }
-        });
-        
-        faqItem.classList.toggle('active');
-    });
-});
-
-// LIVE CHAT
-const chatToggle = document.getElementById('chat-toggle');
-const chatClose = document.getElementById('chat-close');
-const chatBox = document.getElementById('chat-box');
-const chatInput = document.getElementById('chat-input');
-const chatSend = document.getElementById('chat-send');
-const chatMessages = document.getElementById('chat-messages');
-
-chatToggle.addEventListener('click', () => {
-    chatBox.style.display = chatBox.style.display === 'none' ? 'flex' : 'none';
-    chatBox.style.flexDirection = 'column';
-});
-
-chatClose.addEventListener('click', () => {
-    chatBox.style.display = 'none';
-});
-
-// Chat responses
-const chatResponses = {
-    'hello': 'Hello! How can I assist you today?',
-    'hi': 'Hey there! What can I do for you?',
-    'price': 'I offer custom packages for different design needs. Contact me to discuss your project requirements!',
-    'pricing': 'I offer custom packages for different design needs. Contact me to discuss your project requirements!',
-    'logo': 'I create amazing custom logos! Would you like to discuss your logo design project?',
-    'social': 'I can create eye-catching social media content for all platforms. Tell me more about your needs!',
-    'thanks': 'You are welcome! Happy to help!',
-    'thank you': 'You are welcome! Happy to help!',
-    'bye': 'Goodbye! Feel free to reach out anytime!',
-    'default': 'That is great! Would you like to discuss your project? Feel free to send me an inquiry!'
-};
-
-function getBotResponse(message) {
-    const lowerMessage = message.toLowerCase();
-    
-    for (let keyword in chatResponses) {
-        if (lowerMessage.includes(keyword)) {
-            return chatResponses[keyword];
-        }
-    }
-    
-    return chatResponses['default'];
-}
-
-function addMessage(text, sender) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `chat-message ${sender}`;
-    messageDiv.textContent = text;
-    chatMessages.appendChild(messageDiv);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-chatSend.addEventListener('click', () => {
-    const message = chatInput.value.trim();
-    
-    if (message) {
-        addMessage(message, 'user');
-        chatInput.value = '';
-        
-        setTimeout(() => {
-            const response = getBotResponse(message);
-            addMessage(response, 'bot');
-        }, 500);
-    }
-});
-
-chatInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        chatSend.click();
-    }
-});
-
-// EmailJS initialization
-emailjs.init("_bUE6eZ-KmbXe0xvE");
-
-function openForm(){
-    document.getElementById("formPopup").style.display = "block";
-}
-
-function closeForm(){
-    document.getElementById("formPopup").style.display = "none";
-}
-
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const loader = document.getElementById('loader');
-    const submitBtn = document.getElementById('submit-btn');
-    
-    loader.style.display = 'block';
-    submitBtn.disabled = true;
-
-    emailjs.sendForm(
-        "service_h3zn5ls",
-        "template_kc5xbyd",
-        this
-    )
-    .then(function() {
-        loader.style.display = 'none';
-        submitBtn.disabled = false;
-        
-        alert("Message sent successfully! I'll get back to you soon.");
-        document.getElementById("contact-form").reset();
-        closeForm();
-
-    })
-    .catch(function(error) {
-        loader.style.display = 'none';
-        submitBtn.disabled = false;
-        
-        console.log(error);
-        alert("Failed to send message. Please try again or email me directly.");
-    });
-});
-
-/* Close when clicking outside */
-window.onclick = function(e){
-    let popup = document.getElementById("formPopup");
-    if(e.target === popup){
-        popup.style.display = "none";
-    }
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
